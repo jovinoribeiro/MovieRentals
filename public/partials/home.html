@@ -1,0 +1,17 @@
+
+<h1>Movie Rentals</h1>
+
+<a href="/#/add-video">Add a Video</a>
+<div ng-controller='HomeCtrl'>
+	<ul>
+		<li ng-repeat='video in videos | filter: paginate'>
+			<a href='/#/edit-video/{{video._id}}'>
+				{{ video.title }}
+			</a>
+			<a href='/#/delete-video/{{video._id}}' >
+				<i class='glyphicon glyphicon-remove'></i>
+			</a>
+		</li>
+	</ul>
+</div>		
+

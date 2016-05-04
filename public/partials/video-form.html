@@ -1,0 +1,17 @@
+
+<h1>Add a Video</h1>
+
+<form>
+	<div class='form-group'>
+		<label>Title</label>
+		<input type='text' class='form-control' ng-model='video.title'>
+	</div>
+	<div class='form-group'>
+		<label>Description</label>
+		<textarea class='form-control' ng-model="video.plot"></textarea>
+	</div>
+	<div class='form-group'>
+		<input type='button' value='Save' class='btn btn-primary' ng-click='save()'>
+		<a href='/#/' class='btn btn-success'>Cancel</a>
+	</div>
+</form>
