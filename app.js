@@ -4,6 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var passport = require('passport');
+
+require('./models/Users');
+require('./config/passport');
+
+mongoose.connect('mongodb://localhost/blockbuster');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,6 +29,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//passport
+app.use(passport.initialize());
 
 //Main entry point
 app.use('/', routes);
